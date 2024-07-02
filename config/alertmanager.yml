@@ -1,0 +1,19 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1m
+  receiver: 'email-notifications'
+
+receivers:
+- name: 'email-notifications'
+  email_configs:
+  - to: 'manish.181623@ncit.edu.np'
+    from: 'manishghimire528@gmail.com'
+    smarthost: 'smtp.gmail.com:587'
+    auth_username: 'manishghimire528@gmail.com'
+    auth_password: 'redminote7'
+    require_tls: false
